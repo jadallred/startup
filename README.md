@@ -1,2 +1,2 @@
 # startup
-my first repository
+my first repository for my start up application

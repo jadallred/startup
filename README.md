@@ -13,6 +13,8 @@ Elevator Pitch:
 
 Have you ever wanted to connect with your coworkers in an easy and fun way? This game application makes it so you can log onto the game and all compete for the highest score. The game is called swimming seahorse and you use the space bar key to swim between seaweed. If you get hit then the game is over and your score is displayed next to everyone else who played the game. 
 
+[Note Jan 272023 at 3_48_08 PM.pdf](https://github.com/jadallred/startup/files/10523773/Note.Jan.272023.at.3_48_08.PM.pdf)
+
 
 
 Key features

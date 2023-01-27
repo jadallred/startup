@@ -11,7 +11,7 @@ I have learned from this assignment how to work on Github and also vsCode and ho
 
 Elevator Pitch:
 
-Have you ever wanted to connect with your coworkers in an easy and fun way? This game application makes it so you can log onto the game and all compete for the highest score. The game is called swimming seahorse and you are swimming between blocks. If you get hit then the game is over and your score is displayed next to everyone else who played the game. 
+Have you ever wanted to connect with your coworkers in an easy and fun way? This game application makes it so you can log onto the game and all compete for the highest score. The game is called swimming seahorse and you use the space bar key to swim between seaweed. If you get hit then the game is over and your score is displayed next to everyone else who played the game. 
 
 
 

@@ -23,3 +23,9 @@ Secure login over HTTPS
 Ability to use space bar to move seahorse
 Scores from all users stored
 Ability for admin to delete scores
+
+
+server http://3.18.145.135
+
+command to shell  ssh -i [key pair file] ubuntu@[ip address]
+

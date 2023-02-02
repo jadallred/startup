@@ -29,3 +29,8 @@ server http://3.18.145.135
 
 command to shell  ssh -i [key pair file] ubuntu@[ip address]
 
+
+http://startupweb260.click/
+
+Learned what a domain name is and subdomain names. Learned how to create a domain name and tie it to the public IP address. Now this can get accessed through any subdomain name
+

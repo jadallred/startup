@@ -38,3 +38,6 @@ Learned what a domain name is and subdomain names. Learned how to create a domai
 https://startupweb260.click/
 
 now my website is secure! This is because of going through Caddy and such. 
+
+Using HTML it is responsible for the basic layout but the design and style comes from CSS. 
+

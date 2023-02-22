@@ -42,3 +42,5 @@ now my website is secure! This is because of going through Caddy and such.
 Using HTML it is responsible for the basic layout but the design and style comes from CSS. 
 
 From working on the simon project already i've been able to learn and understand more about HTML. Its confusing but as I was writing the code I realized its a little repetitive. 
+
+worked on the simon CSS file and was able to see how they go individually into each button and help set it up. 

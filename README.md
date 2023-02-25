@@ -45,4 +45,6 @@ From working on the simon project already i've been able to learn and understand
 
 worked on the simon CSS file and was able to see how they go individually into each button and help set it up. 
 
+<img width="844" alt="Screen Shot 2023-02-24 at 7 24 54 PM" src="https://user-images.githubusercontent.com/123498729/221331385-59b7724d-dfe1-4b40-8cfe-e9e53a59a806.png">
+
 I have learned more about the formatting of CSS and how they work with the HTML to bring life to the screen. Nothing can truly work until we do javascript. But the CSS is able to help the HTML bring the narwhal to life and add the moving bubbles across the screen. Also now there is a good border that cleans up the screen so nicely. 

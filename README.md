@@ -44,3 +44,5 @@ Using HTML it is responsible for the basic layout but the design and style comes
 From working on the simon project already i've been able to learn and understand more about HTML. Its confusing but as I was writing the code I realized its a little repetitive. 
 
 worked on the simon CSS file and was able to see how they go individually into each button and help set it up. 
+
+I have learned more about the formatting of CSS and how they work with the HTML to bring life to the screen. Nothing can truly work until we do javascript. But the CSS is able to help the HTML bring the narwhal to life and add the moving bubbles across the screen. Also now there is a good border that cleans up the screen so nicely. 

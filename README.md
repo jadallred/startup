@@ -44,3 +44,5 @@ Using HTML it is responsible for the basic layout but the design and style comes
 From working on the simon project already i've been able to learn and understand more about HTML. Its confusing but as I was writing the code I realized its a little repetitive. 
 
 worked on the simon CSS file and was able to see how they go individually into each button and help set it up. 
+
+<img width="844" alt="Screen Shot 2023-02-24 at 7 24 54 PM" src="https://user-images.githubusercontent.com/123498729/221331385-59b7724d-dfe1-4b40-8cfe-e9e53a59a806.png">

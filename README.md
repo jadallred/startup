@@ -51,6 +51,9 @@ I have learned more about the formatting of CSS and how they work with the HTML 
 
 Regular expressions in JavaScript are used for pattern matching and manipulation of text. They provide a powerful and flexible way to search for, match, and replace strings of text based on specific patterns.
 
+<img width="777" alt="Screen Shot 2023-02-27 at 2 34 02 PM" src="https://user-images.githubusercontent.com/123498729/221695821-9a097593-af26-49e1-9aa2-34ac8eab89f3.png">
+
+
 Some common use cases of regular expressions in JavaScript include:
 
 Validation of user input: Regular expressions can be used to validate user input in web forms, such as email addresses, phone numbers, and passwords.

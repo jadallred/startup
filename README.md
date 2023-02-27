@@ -48,3 +48,17 @@ worked on the simon CSS file and was able to see how they go individually into e
 <img width="844" alt="Screen Shot 2023-02-24 at 7 24 54 PM" src="https://user-images.githubusercontent.com/123498729/221331385-59b7724d-dfe1-4b40-8cfe-e9e53a59a806.png">
 
 I have learned more about the formatting of CSS and how they work with the HTML to bring life to the screen. Nothing can truly work until we do javascript. But the CSS is able to help the HTML bring the narwhal to life and add the moving bubbles across the screen. Also now there is a good border that cleans up the screen so nicely. 
+
+Regular expressions in JavaScript are used for pattern matching and manipulation of text. They provide a powerful and flexible way to search for, match, and replace strings of text based on specific patterns.
+
+Some common use cases of regular expressions in JavaScript include:
+
+Validation of user input: Regular expressions can be used to validate user input in web forms, such as email addresses, phone numbers, and passwords.
+
+Searching and replacing text: Regular expressions can be used to search and replace specific patterns in a text string, such as replacing all instances of a particular word or phrase.
+
+Parsing and extracting data: Regular expressions can be used to parse and extract data from structured text, such as extracting URLs from a web page or parsing log files.
+
+String manipulation: Regular expressions can be used to manipulate and transform strings of text, such as removing whitespace or converting text to uppercase.
+
+In summary, regular expressions are a powerful tool for text processing in JavaScript and are commonly used in web development, data processing, and other areas where text manipulation is required.

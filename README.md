@@ -75,3 +75,10 @@ The rest parameter is used to represent an indefinite number of arguments as an 
 Both the spread operator and rest parameter are important because they can help make code more readable and maintainable. They also allow for more concise code, reducing the amount of boilerplate and repetition required. This can make it easier to write, understand, and modify code, which is especially important in larger and more complex applications.
 
 Both array and object destructuring are important because they help make code more readable, maintainable, and concise. They can also reduce the amount of code needed to access individual elements or properties of arrays and objects, making it easier to work with more complex data structures. Array and object destructuring are commonly used in modern JavaScript development, and are considered essential features of the language
+
+
+Through doing this JavaScript of Simon I was able to look through the original code and learn from it as I typed it up. This JavaScript code defines a function named loadScores() that loads scores from local storage and populates them into an HTML table.
+
+The code first initializes an empty array named scores, then it retrieves the scores stored in local storage by calling localStorage.getItem('scores'). If the retrieved value is not null or undefined, the code parses the JSON string and stores the result in scores.
+
+The function then selects the HTML element with ID scores and assigns it to the variable tableBodyEl. The code checks if the scores array has any elements; if so, it loops through the array using the entries() method to access both the index and the value of each score.At the end of the function, it calls loadScores() to execute the function and populate the scores in the HTML table. 

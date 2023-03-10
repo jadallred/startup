@@ -1,87 +1,132 @@
-var bubble1_hg;
-var hole1_hg;
-var bubble2_hg;
+let move_speed = 2, grativy = 0.24;
+let narwhal = document.querySelector('.narwhal');
+let img = document.getElementById('narwhal-1');
+let sound_point = new Audio('sounds effect/point.mp3');
+let sound_die = new Audio('sounds effect/die.mp3');
 
-setInterval(() => {
-    bubble1_hg=Math.floor(Math.random()*10)+30;
-    hole1_hg=Math.floor(Math.random()*20)+20;
-    document.getElementById("bubble1").style.height=bubble1_hg+"%";
-    document.getElementById("bubble2").style.top=bubble1_hg+hole1_hg+"%";
-    document.getElementById("bubble2").style.height=100-(bubble1_hg+hole1_hg)+"%";
+// getting narwhal element properties
+let narwhal_props = narwhal.getBoundingClientRect();
 
-}, 4000);
+// This method returns DOMReact -> top, right, bottom, left, x, y, width and height
+let background = document.querySelector('.background').getBoundingClientRect();
 
-var elem=document.getElementById("bird");
+let score_val = document.querySelector('.score_val');
+let message = document.querySelector('.message');
+let score_title = document.querySelector('.score_title');
 
-//gravity functionality
+let game_state = 'Start';
+img.style.display = 'none';
+message.classList.add('messageStyle');
 
-setInterval(() => {
-    var x=parseInt(window.getComputedStyle(elem).getPropertyValue("top"));
-    if(x<=510){
-        elem.style.top=(x+3)+"px";
+document.addEventListener('keydown', (e) => {
+    
+    if(e.key == 'Enter' && game_state != 'Play'){
+        document.querySelectorAll('.pipe_sprite').forEach((e) => {
+            e.remove();
+        });
+        img.style.display = 'block';
+        narwhal.style.top = '40vh';
+        game_state = 'Play';
+        message.innerHTML = '';
+        score_title.innerHTML = 'Score : ';
+        score_val.innerHTML = '0';
+        message.classList.remove('messageStyle');
+        play();
     }
-    else{
-        alert("You Lost !! your score is: "+score);
-        elem.style.top=100+"px";
-        window.location.reload();
+});
+
+function play(){
+    function move(){
+        if(game_state != 'Play') return;
+
+        let pipe_sprite = document.querySelectorAll('.pipe_sprite');
+        pipe_sprite.forEach((element) => {
+            let pipe_sprite_props = element.getBoundingClientRect();
+            narwhal_props = narwhal.getBoundingClientRect();
+
+            if(pipe_sprite_props.right <= 0){
+                element.remove();
+            }else{
+                if(narwhal_props.left < pipe_sprite_props.left + pipe_sprite_props.width && narwhal_props.left + narwhal_props.width > pipe_sprite_props.left && narwhal_props.top < pipe_sprite_props.top + pipe_sprite_props.height && narwhal_props.top + narwhal_props.height > pipe_sprite_props.top){
+                    game_state = 'End';
+                    message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter To Restart';
+                    message.classList.add('messageStyle');
+                    img.style.display = 'none';
+                    sound_die.play();
+                    return;
+                }else{
+                    if(pipe_sprite_props.right < narwhal_props.left && pipe_sprite_props.right + move_speed >= narwhal_props.left && element.increase_score == '1'){
+                        score_val.innerHTML =+ score_val.innerHTML + 1;
+                        sound_point.play();
+                    }
+                    element.style.left = pipe_sprite_props.left - move_speed + 'px';
+                }
+            }
+        });
+        requestAnimationFrame(move);
     }
-}, 30);
+    requestAnimationFrame(move);
 
+    let narwhal_dy = 0;
+    function apply_gravity(){
+        if(game_state != 'Play') return;
+        narwhal_dy = narwhal_dy + grativy;
+        document.addEventListener('keydown', (e) => {
+            if(e.key == 'ArrowUp' || e.key == ' '){
+                img.src = 'narwhal-2.png';
+                narwhal_dy = -7.7;
+            }
+        });
 
-//fly functionality
+        document.addEventListener('keyup', (e) => {
+            if(e.key == 'ArrowUp' || e.key == ' '){
+                img.src = 'narwhal.png';
+            }
+        });
 
-function jump(){
-    var fly=parseInt(window.getComputedStyle(elem).getPropertyValue("top"));
-    if(fly>=14){
-        elem.style.top=(fly-40)+"px";
+        if( narwhal_props.top <= 0 || narwhal_props.bottom >= background.bottom){
+            game_state = 'End';
+            message.style.left = '28vw';
+            window.location.reload();
+            message.classList.remove('messageStyle');
+            return;
+        }
+        narwhal.style.top = narwhal_props.top + narwhal_dy + 'px';
+        narwhal_props = narwhal.getBoundingClientRect();
+        requestAnimationFrame(apply_gravity);
     }
+    requestAnimationFrame(apply_gravity);
+
+    let pipe_seperation = 160;
+
+    let pipe_gap = 50;
+
+    function create_pipe(){
+        if(game_state != 'Play') return;
+
+        if(pipe_seperation > 190){
+            pipe_seperation = 0;
+
+            let pipe_posi = Math.floor(Math.random() * 43) + 8;
+            let pipe_sprite_inv = document.createElement('div');
+            pipe_sprite_inv.className = 'pipe_sprite';
+            pipe_sprite_inv.style.top = pipe_posi - 70 + 'vh';
+            pipe_sprite_inv.style.left = '100vw';
+
+            document.body.appendChild(pipe_sprite_inv);
+            let pipe_sprite = document.createElement('div');
+            pipe_sprite.className = 'pipe_sprite';
+            pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
+            pipe_sprite.style.left = '100vw';
+            pipe_sprite.increase_score = '1';
+
+            document.body.appendChild(pipe_sprite);
+        }
+        pipe_seperation++;
+        requestAnimationFrame(create_pipe);
+    }
+    requestAnimationFrame(create_pipe);
 }
 
-document.addEventListener('keyup', event =>{
-    if(event.code==='Space'){
-        jump();
-    }
-})
-
-
-//score functionality
-
-var score=0;
-setInterval(() => {
-    score++;
-    document.getElementById("scr").innerHTML=score;
-}, 500);
-
-
-//obstacle functionality
-
-function checkcollision(elm1,elm2){
-    var elm1Rect=elm1.getBoundingClientRect();
-    var elm2Rect=elm2.getBoundingClientRect();
-
-    return(elm1Rect.right >= elm2Rect.left && 
-        elm1Rect.left <= elm2Rect.right) && 
-        (elm1Rect.bottom>=elm2Rect.top && 
-            elm1Rect.top<=elm2Rect.bottom);
-}
-
-setInterval(() => {
-    if(checkcollision(document.getElementById("narwhal"),document.getElementById("bubble1"))){
-        elem.style.top=513+"px";
-        setTimeout(() => {
-            alert("You Lost !! Your Score is: "+score);
-            return;
-        }, 10);
-        window.location.reload();
-    }
-    else if(checkcollision(document.getElementById("narwhal"),document.getElementById("bubble2"))){
-        elem.style.top=513+"px";
-        setTimeout(() => {
-            alert("You Lost!! Your Score is: "+score);
-            return;
-        }, 10);
-        window.location.reload();
-    }
-}, 100);
 
 

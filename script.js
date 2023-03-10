@@ -1,134 +1,87 @@
-let move_speed = 3, gravity = 0.5;
-let narwhal = document.querySelector('.narwhal');
-let img = document.getElementById('narwhal-1');
+var bubble1_hg;
+var hole1_hg;
+var bubble2_hg;
 
-let narwhal_props = narwhal.getBoundingClientRect();
+setInterval(() => {
+    bubble1_hg=Math.floor(Math.random()*10)+30;
+    hole1_hg=Math.floor(Math.random()*20)+20;
+    document.getElementById("bubble1").style.height=bubble1_hg+"%";
+    document.getElementById("bubble2").style.top=bubble1_hg+hole1_hg+"%";
+    document.getElementById("bubble2").style.height=100-(bubble1_hg+hole1_hg)+"%";
 
-let background = document.querySelector('.background').getBoundingClientRect();
-let score_val = document.querySelector('.score_val');
-let message = document.querySelector('.message');
-let score_title = document.querySelector('.score_title');
+}, 4000);
 
-let game_state = 'Start';
-img.style.display = 'none';
-message.classList.add('messageStyle');
+var elem=document.getElementById("bird");
 
-document.addEventListener('keydown', (e) => {
-    if(e.key == 'Enter' && game_state != 'Play'){
-        document.querySelectorAll('.pip_sprite').forEach((e) => {
-            e.remove();
-        });
-        img.style.display = 'block';
-        narwhal.style.top = '40vh';
-        game_state = 'Play';
-        message.innerHTML = '';
-        score_title.innerHTML = 'Score : ';
-        score_val.innerHTML = '0';
-        message.classList.remove('messageStyle');
-        play();
+//gravity functionality
+
+setInterval(() => {
+    var x=parseInt(window.getComputedStyle(elem).getPropertyValue("top"));
+    if(x<=510){
+        elem.style.top=(x+3)+"px";
     }
-});
-
-function play(){
-    function move(){
-        if(game_state != 'Play') return;
-
-        let bubble_sprite = document.querySelectorAll('.bubble_sprite');
-        bubble_sprite.forEach((element) => {
-            let bubble_sprite_props = element.getBoundingClientRect();
-            narwhal_props = narwhal.getBoundingClientRect();
-
-            if(bubble_sprite_props.right <= 0){
-                element.remove();
-            }else{
-                if(narwhal_props.left < bubble_sprite_props.left + bubble_sprite_props.
-                    width && narwhal_props.left + narwhal_props.width > bubble_sprite_props.
-                    left && narwhal_props.top < bubble_sprite_props.top + 
-                    bubble_sprite_props.height && narwhal_props.top + narwhal_props.
-                    height > bubble_sprite_props.top){
-                        game_state = 'End';
-                        message.innerHTML = 'Game Over'.fontcolor('red') + 
-                        '<br>Press Enter To Restart';
-                        message.classList.add('messageStyle');
-                        img.style.display = 'none';
-                        return;
-                    }else{
-                        if(bubble_sprite_props.right < narwhal_props.left && 
-                            bubble_sprite_props.right + move_speed >= narwhal_props.left &&
-                            element.increase_score == '1'){
-                                score_val.innerHTML =+ score_val.innerHTML + 1;
-                            }
-                            element.style.left = bubble_sprite_props.left - move_speed + 
-                            'px';
-
-                    }
-            }
-
-        });
-        requestAnimationFrame(move);
+    else{
+        alert("You Lost !! your score is: "+score);
+        elem.style.top=100+"px";
+        window.location.reload();
     }
-    requestAnimationFrame(move);
+}, 30);
 
-    let narwhal_dy = 0;
-    function apply_gravity(){
-        if(game_state != 'Play') return;
-        narwhal_dy = narwhal_dy + gravity;
-        document.addEventListener('keydown', (e) => {
-            if(e.key == 'ArrowUp' || e.key == ''){
-                img.src = 'images/narwhal-2.png';
-                narwhal_dy = -7.6;
 
-            }
-        });
+//fly functionality
 
-        document.addEventListener('keyup', (e) => {
-            if(e.key == 'ArrowUp' || e.key == ''){
-                img.src = 'images/narwhal.png';
-
-            }
-        });
-
-        if(narwhal_props.top <= 0 || narwhal_props.bottom >= background.bottom){
-            game_state = 'End';
-            message.style.left = '28vw';
-            window.location.reload();
-            message.classList.remove('messageStyle');
-            return;
-        }
-        narwhal.style.top = narwhal_props.top + narwhal_dy + 'px';
-        narwhal_props = narwhal.getBoundingClientRect();
-        requestAnimationFrame(apply_gravity);
+function jump(){
+    var fly=parseInt(window.getComputedStyle(elem).getPropertyValue("top"));
+    if(fly>=14){
+        elem.style.top=(fly-40)+"px";
     }
-
-    requestAnimationFrame(apply_gravity);
-
-    let bubble_seperation = 0;
-    let bubble_gap = 35;
-
-    function create_bubble(){
-        if(game_state != 'Play') return;
-
-
-        if(bubble_seperation > 155){
-            bubble_seperation = 0;
-            let bubble_posi = Math.floor(Math.random() * 43) + 8;
-            let bubble_sprite_inv = document.createElement('div');
-            bubble_sprite_inv.className = 'bubble_sprite';
-            bubble_sprite_inv.style.top = bubble_posi - 70 + 'vh';
-            bubble_sprite_inv.style.left = '100vw';
-
-            document.body.appendChild(bubble_sprite_inv);
-            let bubble_sprite = document.createElement('div');
-            bubble_sprite.className = 'bubble_sprite';
-            bubble_sprite.style.top = bubble_posi + bubble_gap + 'vh';
-            bubble_sprite.style.left = '100vw';
-            bubble_sprite.increase_score = '1';
-
-            document.body.appendChild(bubble_sprite);
-
-        }
-        bubble_seperation++;
-        requestAnimationFrame(create_bubble);
-    }
-    requestAnimationFrame(create_bubble);
 }
+
+document.addEventListener('keyup', event =>{
+    if(event.code==='Space'){
+        jump();
+    }
+})
+
+
+//score functionality
+
+var score=0;
+setInterval(() => {
+    score++;
+    document.getElementById("scr").innerHTML=score;
+}, 500);
+
+
+//obstacle functionality
+
+function checkcollision(elm1,elm2){
+    var elm1Rect=elm1.getBoundingClientRect();
+    var elm2Rect=elm2.getBoundingClientRect();
+
+    return(elm1Rect.right >= elm2Rect.left && 
+        elm1Rect.left <= elm2Rect.right) && 
+        (elm1Rect.bottom>=elm2Rect.top && 
+            elm1Rect.top<=elm2Rect.bottom);
+}
+
+setInterval(() => {
+    if(checkcollision(document.getElementById("narwhal"),document.getElementById("bubble1"))){
+        elem.style.top=513+"px";
+        setTimeout(() => {
+            alert("You Lost !! Your Score is: "+score);
+            return;
+        }, 10);
+        window.location.reload();
+    }
+    else if(checkcollision(document.getElementById("narwhal"),document.getElementById("bubble2"))){
+        elem.style.top=513+"px";
+        setTimeout(() => {
+            alert("You Lost!! Your Score is: "+score);
+            return;
+        }, 10);
+        window.location.reload();
+    }
+}, 100);
+
+

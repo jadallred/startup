@@ -48,3 +48,37 @@ worked on the simon CSS file and was able to see how they go individually into e
 <img width="844" alt="Screen Shot 2023-02-24 at 7 24 54 PM" src="https://user-images.githubusercontent.com/123498729/221331385-59b7724d-dfe1-4b40-8cfe-e9e53a59a806.png">
 
 I have learned more about the formatting of CSS and how they work with the HTML to bring life to the screen. Nothing can truly work until we do javascript. But the CSS is able to help the HTML bring the narwhal to life and add the moving bubbles across the screen. Also now there is a good border that cleans up the screen so nicely. 
+
+Regular expressions in JavaScript are used for pattern matching and manipulation of text. They provide a powerful and flexible way to search for, match, and replace strings of text based on specific patterns.
+
+<img width="777" alt="Screen Shot 2023-02-27 at 2 34 02 PM" src="https://user-images.githubusercontent.com/123498729/221695821-9a097593-af26-49e1-9aa2-34ac8eab89f3.png">
+
+
+Some common use cases of regular expressions in JavaScript include:
+
+Validation of user input: Regular expressions can be used to validate user input in web forms, such as email addresses, phone numbers, and passwords.
+
+Searching and replacing text: Regular expressions can be used to search and replace specific patterns in a text string, such as replacing all instances of a particular word or phrase.
+
+Parsing and extracting data: Regular expressions can be used to parse and extract data from structured text, such as extracting URLs from a web page or parsing log files.
+
+String manipulation: Regular expressions can be used to manipulate and transform strings of text, such as removing whitespace or converting text to uppercase.
+
+In summary, regular expressions are a powerful tool for text processing in JavaScript and are commonly used in web development, data processing, and other areas where text manipulation is required.
+
+The spread operator and rest parameter are important features in JavaScript that allow for more flexible and concise code.
+
+The spread operator (...) is used to spread the elements of an iterable (like an array or a string) into another iterable. This is useful when you want to combine two arrays, or when you want to pass the elements of an array as separate arguments to a function. By using the spread operator, you can avoid the need to manually loop through each element of an array and add it to a new array or pass each element individually as arguments to a function.
+
+The rest parameter is used to represent an indefinite number of arguments as an array. This is useful when you want to create a function that can take in any number of arguments, without having to specify them all in the function definition. By using the rest parameter, you can create more flexible and reusable functions that can accept a variable number of arguments.
+
+Both the spread operator and rest parameter are important because they can help make code more readable and maintainable. They also allow for more concise code, reducing the amount of boilerplate and repetition required. This can make it easier to write, understand, and modify code, which is especially important in larger and more complex applications.
+
+Both array and object destructuring are important because they help make code more readable, maintainable, and concise. They can also reduce the amount of code needed to access individual elements or properties of arrays and objects, making it easier to work with more complex data structures. Array and object destructuring are commonly used in modern JavaScript development, and are considered essential features of the language
+
+
+Through doing this JavaScript of Simon I was able to look through the original code and learn from it as I typed it up. This JavaScript code defines a function named loadScores() that loads scores from local storage and populates them into an HTML table.
+
+The code first initializes an empty array named scores, then it retrieves the scores stored in local storage by calling localStorage.getItem('scores'). If the retrieved value is not null or undefined, the code parses the JSON string and stores the result in scores.
+
+The function then selects the HTML element with ID scores and assigns it to the variable tableBodyEl. The code checks if the scores array has any elements; if so, it loops through the array using the entries() method to access both the index and the value of each score.At the end of the function, it calls loadScores() to execute the function and populate the scores in the HTML table. 

@@ -82,3 +82,5 @@ Through doing this JavaScript of Simon I was able to look through the original c
 The code first initializes an empty array named scores, then it retrieves the scores stored in local storage by calling localStorage.getItem('scores'). If the retrieved value is not null or undefined, the code parses the JSON string and stores the result in scores.
 
 The function then selects the HTML element with ID scores and assigns it to the variable tableBodyEl. The code checks if the scores array has any elements; if so, it loops through the array using the entries() method to access both the index and the value of each score.At the end of the function, it calls loadScores() to execute the function and populate the scores in the HTML table. 
+
+had to change the speed lots to make sure the timing was good, the index.html had to link the play.html so that the pages were shown in the correct order.

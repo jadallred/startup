@@ -33,19 +33,19 @@ function play(){
     function move(){
         if(game_state != 'Play') return;
 
-        let pipe_sprite = document.querySelectorAll('.pipe_sprite');
-        pipe_sprite.forEach((element) => {
-            let pipe_sprite_props = element.getBoundingClientRect();
+        let bubble_sprite = document.querySelectorAll('.bubble_sprite');
+        bubble_sprite.forEach((element) => {
+            let bubble_sprite_props = element.getBoundingClientRect();
             narwhal_props = narwhal.getBoundingClientRect();
 
-            if(pipe_sprite_props.right <= 0){
+            if(bubble_sprite_props.right <= 0){
                 element.remove();
             }else{
-                if(narwhal_props.left < pipe_sprite_props.left + pipe_sprite_props.
-                    width && bird_props.left + bird_props.width > pipe_sprite_props.
-                    left && narwhal_props.top < pipe_sprite_props.top + 
-                    pipe_sprite_props.height && narwhal_props.top + narwhal_props.
-                    height > pipe_sprite_props.top){
+                if(narwhal_props.left < bubble_sprite_props.left + bubble_sprite_props.
+                    width && narwhal_props.left + narwhal_props.width > bubble_sprite_props.
+                    left && narwhal_props.top < bubble_sprite_props.top + 
+                    bubble_sprite_props.height && narwhal_props.top + narwhal_props.
+                    height > bubble_sprite_props.top){
                         game_state = 'End';
                         message.innerHTML = 'Game Over'.fontcolor('red') + 
                         '<br>Press Enter To Restart';
@@ -53,12 +53,12 @@ function play(){
                         img.style.display = 'none';
                         return;
                     }else{
-                        if(pipe_sprite_props.right < narwhal_props.left && 
-                            pipe_sprite_props.right + move_speed >= narwhal_props.left &&
+                        if(bubble_sprite_props.right < narwhal_props.left && 
+                            bubble_sprite_props.right + move_speed >= narwhal_props.left &&
                             element.increase_score == '1'){
                                 score_val.innerHTML =+ score_val.innerHTML + 1;
                             }
-                            element.style.left = pipe_sprite_props.left - move_speed + 
+                            element.style.left = bubble_sprite_props.left - move_speed + 
                             'px';
 
                     }
@@ -75,7 +75,7 @@ function play(){
         narwhal_dy = narwhal_dy + gravity;
         document.addEventListener('keydown', (e) => {
             if(e.key == 'ArrowUp' || e.key == ''){
-                img.src = 'images/Narwhal-2.png';
+                img.src = 'images/narwhal-2.png';
                 narwhal_dy = -7.6;
 
             }
@@ -83,7 +83,7 @@ function play(){
 
         document.addEventListener('keyup', (e) => {
             if(e.key == 'ArrowUp' || e.key == ''){
-                img.src = 'images/Narwhal.png';
+                img.src = 'images/narwhal.png';
 
             }
         });
@@ -102,33 +102,33 @@ function play(){
 
     requestAnimationFrame(apply_gravity);
 
-    let pipe_seperation = 0;
-    let pipe_gap = 35;
+    let bubble_seperation = 0;
+    let bubble_gap = 35;
 
-    function create_pipe(){
+    function create_bubble(){
         if(game_state != 'Play') return;
 
 
-        if(pipe_seperation > 155){
-            pipe_seperation = 0;
-            let pipe_posi = Math.floor(Math.random() * 43) + 8;
-            let pip_sprite_inv = document.createElement('div');
-            pip_sprite_inv.className = 'pipe_sprite';
-            pip_sprite_inv.style.top = pipe_posi - 70 + 'vh';
-            pip_sprite_inv.style.left = '100vw';
+        if(bubble_seperation > 155){
+            bubble_seperation = 0;
+            let bubble_posi = Math.floor(Math.random() * 43) + 8;
+            let bubble_sprite_inv = document.createElement('div');
+            bubble_sprite_inv.className = 'bubble_sprite';
+            bubble_sprite_inv.style.top = bubble_posi - 70 + 'vh';
+            bubble_sprite_inv.style.left = '100vw';
 
-            document.body.appendChild(pip_sprite_inv);
-            let pipe_sprite = document.createElement('div');
-            pipe_sprite.className = 'pipe_sprite';
-            pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
-            pipe_sprite.style.left = '100vw';
-            pipe_sprite.increase_score = '1';
+            document.body.appendChild(bubble_sprite_inv);
+            let bubble_sprite = document.createElement('div');
+            bubble_sprite.className = 'bubble_sprite';
+            bubble_sprite.style.top = bubble_posi + bubble_gap + 'vh';
+            bubble_sprite.style.left = '100vw';
+            bubble_sprite.increase_score = '1';
 
-            document.body.appendChild(pipe_sprite);
+            document.body.appendChild(bubble_sprite);
 
         }
-        pipe_seperation++;
-        requestAnimationFrame(create_pipe);
+        bubble_seperation++;
+        requestAnimationFrame(create_bubble);
     }
-    requestAnimationFrame(create_pipe);
+    requestAnimationFrame(create_bubble);
 }

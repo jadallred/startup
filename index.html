@@ -4,11 +4,38 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="images/favicon.ico"/>
         <title> NARWHAL BUBBLE GAME</title>
+        <script src="login.js"></script>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
         </head>
-        <body onclick="jump()">
-    
+        <body>
+
+            <div class="background"></div>
+            <img src="images.narwhal.png" alt="invalid-img" class="narwhal" id="narwhal">
+            <div class="message"
+
+            <main class="container-fluid bg-secondary text-center">
+                <div>
+                  <h1>Welcome</h1>
+                  <p>Login to play</p>
+                  <div>
+                    <input type="text" id="name" placeholder="Your name here" />
+                    <button class="btn btn-primary" onclick="login()">Login</button>
+                  </div>
+                </div>
+              </main>
+
+              <footer class="bg-dark text-dark text-muted">
+                <div class="container-fluid">
+                  <span class="text-reset">Author Name(s)</span>
+                  <a
+                    class="text-reset"
+                    href="https://github.com/jadallred/startup"
+                    >Source</a
+                  >
+
         <div id="game">
             <div id="bubble1" class="obs"></div>
             <div id="bubble2" class="obs"></div>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NARWHAL BUBBLE GAME</title>
-    <link rel="stylesheet" href="style.css">
+	<title>Swimming Narwhal</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body onclick="jump()">
-
-    <div id="game">
-        <div id="bubble1" class="obs"></div>
-        <div id="bubble2" class="obs"></div>
-        <div id="narwhal"><img src="narwhal.png"></div>
-        <div id="score">SCORE: <span id="scr">0</span></div>
-
-    </div>
-
-    <script src="script.js"></script>
-    
+<body>
+    <div class="login-screen">
+		<h1>Swimming Narwhal</h1>
+		<form action="play.html">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<button type="submit">Login</button>
+		</form>
+	</div>
+    <script src="scores.js"></script>
 </body>
 </html>

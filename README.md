@@ -84,3 +84,6 @@ The code first initializes an empty array named scores, then it retrieves the sc
 The function then selects the HTML element with ID scores and assigns it to the variable tableBodyEl. The code checks if the scores array has any elements; if so, it loops through the array using the entries() method to access both the index and the value of each score.At the end of the function, it calls loadScores() to execute the function and populate the scores in the HTML table. 
 
 had to change the speed lots to make sure the timing was good, the index.html had to link the play.html so that the pages were shown in the correct order.
+
+
+The fetch() function is a built-in JavaScript method that enables easy asynchronous data fetching from a web API endpoint. It returns a Promise that resolves to the response from the server, which can be used to extract data, handle errors, and manipulate the DOM. The fetch() function uses the HTTP protocol and can be used to send requests with various methods (GET, POST, PUT, DELETE, etc.) and headers. It is important to note that the fetch() function does not handle network errors, and therefore requires proper error handling using catch() or other means. Additionally, since the fetch() function is asynchronous, it does not block the main thread, which makes it a powerful tool for building fast and responsive web applications.

@@ -87,3 +87,23 @@ had to change the speed lots to make sure the timing was good, the index.html ha
 
 
 The fetch() function is a built-in JavaScript method that enables easy asynchronous data fetching from a web API endpoint. It returns a Promise that resolves to the response from the server, which can be used to extract data, handle errors, and manipulate the DOM. The fetch() function uses the HTTP protocol and can be used to send requests with various methods (GET, POST, PUT, DELETE, etc.) and headers. It is important to note that the fetch() function does not handle network errors, and therefore requires proper error handling using catch() or other means. Additionally, since the fetch() function is asynchronous, it does not block the main thread, which makes it a powerful tool for building fast and responsive web applications.
+
+
+
+Express is a popular web application framework for Node.js. Here are some things you can learn about Express:
+
+Routing: Express provides a powerful routing system that allows you to map HTTP requests to specific handler functions. You can define routes using HTTP methods like GET, POST, PUT, and DELETE.
+
+Middleware: Express makes it easy to write middleware functions that can modify the request and response objects. Middleware can be used for tasks like logging, authentication, and error handling.
+
+Templating: Express supports a variety of templating engines like EJS, Pug, and Handlebars. These engines allow you to generate dynamic HTML pages by merging data with templates.
+
+Static files: Express provides middleware for serving static files like images, CSS, and JavaScript files.
+
+Error handling: Express has built-in error handling middleware that can catch errors thrown by your application and handle them appropriately.
+
+Database integration: Express can be used with various databases like MySQL, MongoDB, and PostgreSQL. You can use libraries like Mongoose to interact with databases and perform CRUD operations.
+
+Security: Express provides features like helmet middleware to improve security and protect your application against common attacks like XSS and CSRF.
+
+Overall, Express is a powerful and flexible framework that can be used to build a wide range of web applications, from small prototypes to large-scale production systems.

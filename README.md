@@ -112,4 +112,4 @@ The deliverable is about converting a JavaScript application into a web applicat
 
 I learned while doing Simon DB that we need to add the MongoDB which helps us persistently save data. Our web service will call the database service to save high scores. This creates a third layer in our Simon technology stack.
 
-in the simon login I was able to see the css files and how the css contributed to the login screen and to the game itself. 
+in the simon login I was able to see the css files and how the css contributed to the login screen and to the game itself. The bootstrap provides a lot of good styling for the simon application. 

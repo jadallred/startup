@@ -84,3 +84,34 @@ The code first initializes an empty array named scores, then it retrieves the sc
 The function then selects the HTML element with ID scores and assigns it to the variable tableBodyEl. The code checks if the scores array has any elements; if so, it loops through the array using the entries() method to access both the index and the value of each score.At the end of the function, it calls loadScores() to execute the function and populate the scores in the HTML table. 
 
 had to change the speed lots to make sure the timing was good, the index.html had to link the play.html so that the pages were shown in the correct order.
+
+
+The fetch() function is a built-in JavaScript method that enables easy asynchronous data fetching from a web API endpoint. It returns a Promise that resolves to the response from the server, which can be used to extract data, handle errors, and manipulate the DOM. The fetch() function uses the HTTP protocol and can be used to send requests with various methods (GET, POST, PUT, DELETE, etc.) and headers. It is important to note that the fetch() function does not handle network errors, and therefore requires proper error handling using catch() or other means. Additionally, since the fetch() function is asynchronous, it does not block the main thread, which makes it a powerful tool for building fast and responsive web applications.
+
+
+
+Express is a popular web application framework for Node.js. Here are some things you can learn about Express:
+
+Routing: Express provides a powerful routing system that allows you to map HTTP requests to specific handler functions. You can define routes using HTTP methods like GET, POST, PUT, and DELETE.
+
+Middleware: Express makes it easy to write middleware functions that can modify the request and response objects. Middleware can be used for tasks like logging, authentication, and error handling.
+
+Templating: Express supports a variety of templating engines like EJS, Pug, and Handlebars. These engines allow you to generate dynamic HTML pages by merging data with templates.
+
+Static files: Express provides middleware for serving static files like images, CSS, and JavaScript files.
+
+Error handling: Express has built-in error handling middleware that can catch errors thrown by your application and handle them appropriately.
+
+Database integration: Express can be used with various databases like MySQL, MongoDB, and PostgreSQL. You can use libraries like Mongoose to interact with databases and perform CRUD operations.
+
+Security: Express provides features like helmet middleware to improve security and protect your application against common attacks like XSS and CSRF.
+
+Overall, Express is a powerful and flexible framework that can be used to build a wide range of web applications, from small prototypes to large-scale production systems.
+
+The deliverable is about converting a JavaScript application into a web application by implementing a web service that listens on a network port for HTTP requests. The web service provides endpoints for getting and updating the scores. Node.js and Express are used to create the HTTP service. The service endpoints are designed using curl commands, and there are two endpoints: GetScores and SubmitScore. The about.js file contains code for making calls to third-party endpoints using fetch to get a random picture and a random quote. The steps to convert the Simon game to a service are also mentioned, which involves moving all the previous deliverable code files into a sub-directory named public and creating an index.js file in the root of the project. The file contains basic Express JavaScript code needed to host the application static content and the desired endpoints. The Simon application code is also modified to make service endpoint requests to the newly created HTTP service code.
+
+I learned while doing Simon DB that we need to add the MongoDB which helps us persistently save data. Our web service will call the database service to save high scores. This creates a third layer in our Simon technology stack.
+
+in the simon login I was able to see the css files and how the css contributed to the login screen and to the game itself. The bootstrap provides a lot of good styling for the simon application. 
+
+The WebSocket used in this helps to clarify how to use the application. 

@@ -1,6 +1,4 @@
-import React from 'react';
 
-import { GameEvent, GameNotifier } from './gameNotifier';
 import React, { useState, useEffect, useRef } from 'react';
 
 import './swimmingNarwhal.css';

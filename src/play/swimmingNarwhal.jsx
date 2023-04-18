@@ -1,11 +1,9 @@
 import React from 'react';
 
 import { GameEvent, GameNotifier } from './gameNotifier';
-import './swimmingNarwhal.css';
-
 import React, { useState, useEffect, useRef } from 'react';
 
-import './style.css';
+import './swimmingNarwhal.css';
 
 const MoveSpeed = 2;
 const Gravity = 0.24;

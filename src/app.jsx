@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
 function App() {
+
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
 
   // Asynchronously determine if the user is authenticated by calling the service

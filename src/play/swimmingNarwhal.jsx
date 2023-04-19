@@ -7,8 +7,6 @@ import './swimming/narwhal.css';
 
 export function SwimmingNarwhal(props) {
   const userName = props.userName;
-  const buttons = new Map();
-  const mistakeSound = new Audio(`/error.mp3`);
 
   const [allowPlayer, setAllowPlayer] = React.useState(false);
   const [sequence, setSequence] = React.useState([]);

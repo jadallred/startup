@@ -115,3 +115,5 @@ I learned while doing Simon DB that we need to add the MongoDB which helps us pe
 in the simon login I was able to see the css files and how the css contributed to the login screen and to the game itself. The bootstrap provides a lot of good styling for the simon application. 
 
 The WebSocket used in this helps to clarify how to use the application. 
+
+http://startup.startupweb260.click

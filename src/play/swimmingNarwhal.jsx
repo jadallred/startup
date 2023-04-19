@@ -1,5 +1,8 @@
+import React from 'react';
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import './swimmingNarwhal.css';
+
 const NARWHAL_HEIGHT = 28;
 const NARWHAL_WIDTH = 33;
 const WALL_HEIGHT = 600;
